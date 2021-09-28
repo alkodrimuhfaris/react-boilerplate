@@ -1,50 +1,139 @@
 $theme-colors: (
   "pap-main": rgb(36, 143, 68),
-  "pap-secondary": #83A18D,
-  "danger": #ED1C24,
+  "pap-secondary": #83a18d,
+  "danger": #ed1c24,
   "green-500": rgba(16, 185, 129, 1),
-  "green-1": #B5F7E690,
-  "green-2": #89DFC890,
+  "green-1": #b5f7e690,
+  "green-2": #89dfc890,
   "green-3": #056644,
   "green-4": #128061,
   "green-5": #266352,
 );
 
 @import "~bootstrap/scss/bootstrap";
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500;1,700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', 'Kumbh Sans', 'Montserrat',
-    sans-serif;
+  font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+    "Helvetica Neue", "Kumbh Sans", "Montserrat", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color: #707070;
 }
 
 body:not(.modal-open) {
   padding-right: 0px !important;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.nav-bar {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  left: 0;
+  height: auto;
+  height: min-content;
+  padding: 25px 0;
+  background-color: #f7f7f7;
+  & .navbar-cont {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    
+    & .logo {
+      width: 10rem;
+      height: 4rem;
+      margin-right: 4rem;
+      object-fit: cover;
+    }
+
+    & .contact {
+      padding-bottom: 0.5rem;
+      & .contact-wrapper {
+        color: #ef4136;
+        text-decoration: none;
+        font-size: 1.2rem;
+        font-weight: 700;
+      }
+    }
+  }
+  .menus {
+    padding: 0 !important;
+    margin: 0 !important;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    list-style: none;
+    .menu {
+      border-bottom: 2px solid transparent;
+      transition: 0.3s ease;
+      &.selected,
+      &:hover {
+        border-bottom: 2px solid #ef4136;
+        transition: 0.3s ease;
+        & .item-menu {
+          color: #ef4136;
+        }
+      }
+      & .item-menu {
+        color: #707070;
+        display: block;
+        text-decoration: none;
+        padding: 0.5rem 0.25rem;
+      }
+    }
+  }
 }
 
-.roboto {
-  font-family: 'Roboto', sans-serif;
+.header-top {
+  .header-top-img {
+    width: 100%;
+    height: 30rem;
+    object-fit: cover;
+    object-position: 50% 0%;
+  }
+
+  .highlights {
+    .highlight {
+      
+    }
+  }
 }
 
-.lato {
-  font-family: 'Lato', sans-serif;
+@media only screen and (max-width: 767px) {
 }
 
-.open-sans {
-  font-family: 'Open Sans', sans-serif;
+@media only screen and (min-width: 786px) {
+  body {
+    &::-webkit-scrollbar {
+      display: block !important;
+      background: #fff !important;
+      width: 6px; /* width of the entire scrollbar */
+      height: 6px; /* width of the entire scrollbar */
+    }
+
+    &::-webkit-scrollbar-track {
+      background: #fff !important; /* color of the tracking area */
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: #707070 !important; /* color of the scroll thumb */
+      border-radius: 20px; /* roundness of the scroll thumb */
+      border: 1.5px solid #fff;
+    }
+  }
 }
 
-.montserrat {
-  font-family: 'Montserrat', sans-serif;
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+}
+
+@media only screen and (min-width: 1200px) {
 }

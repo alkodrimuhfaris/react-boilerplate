@@ -10,9 +10,8 @@ function App() {
     <Provider store={store}>
       <BrowserRouter>
         <Switch>
+          <Route path="/" exact component={Main} />
           <Redirect from="/*" to="/" exact />
-          <Route path="/get/:id" exact component={Main} />
-          <Route path="/my-collections" component={Main} />
         </Switch>
       </BrowserRouter>
     </Provider>
