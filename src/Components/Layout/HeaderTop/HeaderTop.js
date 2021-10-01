@@ -15,19 +15,25 @@ export default function HeaderTop() {
         src="/assets/photos/header-thumbnail.png"
         alt="header-thumbnail"
       />
-      <div className="highligts">
+      <div className="highlights">
         <div className="container">
-          {highligt.map((val, idx) => (
-            <div key={idx} className="highligt">
-              <div className="number">
-                <span>{val.number}</span>
+          <div className="row">
+            {highligt.map((val, idx) => (
+              <div key={idx} className="col-3 highlight">
+                <div className="number">
+                  <span>{val.number}</span>
+                </div>
+                <div className="words">
+                  <div className="top">
+                    <span>{val.topText}</span>
+                  </div>
+                  <div>
+                    <span>{val.bottom}</span>
+                  </div>
+                </div>
               </div>
-              <div className="words">
-                <span>{val.topText}</span>
-                <span>{val.bottom}</span>
-              </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </div>

@@ -1,5 +1,6 @@
 import React from 'react';
 import {useLocation, Link} from 'react-router-dom';
+import Contact from './Contact';
 
 export default function Menu() {
   const {hash} = useLocation();
@@ -12,15 +13,17 @@ export default function Menu() {
     {name: 'Contact', hash: 'contact'},
   ];
 
-  React.useEffect(() => {
-    console.log(hash);
-  }, [hash]);
-
   return (
     <ul className="menus">
       {menuList.map((val, idx) => (
         <li
-          className={`menu ${hash === `#${val.hash}` ? 'selected' : ''}`}
+          className={`menu ${
+            !hash && idx === 0
+              ? 'selected'
+              : hash === `#${val.hash}`
+              ? 'selected'
+              : ''
+          }`}
           key={idx}
         >
           <Link
@@ -33,6 +36,7 @@ export default function Menu() {
           </Link>
         </li>
       ))}
+      <Contact />
     </ul>
   );
 }

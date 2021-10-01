@@ -13,7 +13,7 @@ module.exports = {
   },
   plugins: ['react', 'prettier'],
   rules: {
-    'no-unused-vars': 'warn',
+    'no-unused-vars': ['warn', {varsIgnorePattern: '^_'}],
     'no-nested-ternary': 'off',
     'react/jsx-filename-extension': [1, {extensions: ['.js', '.jsx']}],
     'prettier/prettier': [

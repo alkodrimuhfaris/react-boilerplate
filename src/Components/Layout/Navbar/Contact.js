@@ -5,7 +5,7 @@ import {callCenter} from '../../../dto/global';
 export default function Contact() {
   return (
     <div className="contact">
-      <a className="contact-wrapper" href={`callto:${callCenter}`}>
+      <a className="contact-wrapper" href={`tel:${callCenter}`}>
         <FaPhoneAlt color="#ef4136" />
         <span className="ml-3">021 570 1505</span>
       </a>
